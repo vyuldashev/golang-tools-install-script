@@ -127,8 +127,10 @@ TEMP_DIRECTORY=$(mktemp -d)
 
 echo "Downloading $PACKAGE_NAME ..."
 if hash wget 2>/dev/null; then
+    echo "1"
     wget https://dl.google.com/go/$PACKAGE_NAME -O "$TEMP_DIRECTORY/go.tar.gz"
 else
+    echo "2"
     curl -o "$TEMP_DIRECTORY/go.tar.gz" https://dl.google.com/go/$PACKAGE_NAME
 fi
 
